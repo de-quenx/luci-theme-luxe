@@ -31,44 +31,176 @@ Berikut beberapa cuplikan tampilan tema **Luci-Theme-LuxeOs**. Klik untuk meliha
 <details>
 <summary>Tampilkan Preview Login</summary>
 
-![Login Light](./previews/luxe-login/light.png)  
-![Login Glass Crystall](./previews/luxe-login/glass-crystall.png)  
-![Login Glass Matte](./previews/luxe-login/glass-matte.png)  
-![Login Gradient](./previews/luxe-login/gradient.png)  
-![Login Dark](./previews/luxe-login/dark.png)  
-![Login Neon](./previews/luxe-login/neon.png)  
-![Login Ocean](./previews/luxe-login/ocean.png)  
-![Login Curve](./previews/luxe-login/curve.png)  
-![Login Matrix](./previews/luxe-login/matrix.png)  
-![Login Neo-Brutalism](./previews/luxe-login/neo-brutalism.png)  
-![Login Liquid Metal](./previews/luxe-login/liquid-metal.png)  
-![Login Liquid Flow](./previews/luxe-login/liquid-flow.png)
+<table>
+  <tr>
+    <td width="50%">
+      <img src="./previews/luxe-login/light.png" alt="Light">
+      <br><div align="center"><b>Light</b></div>
+    </td>
+    <td width="50%">
+      <img src="./previews/luxe-login/glass-crystall.png" alt="Glass Crystall">
+      <br><div align="center"><b>Glass Crystall</b></div>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img src="./previews/luxe-login/glass-matte.png" alt="Glass Matte">
+      <br><div align="center"><b>Glass Matte</b></div>
+    </td>
+    <td width="50%">
+      <img src="./previews/luxe-login/gradient.png" alt="Gradient">
+      <br><div align="center"><b>Gradient</b></div>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img src="./previews/luxe-login/dark.png" alt="Dark">
+      <br><div align="center"><b>Dark</b></div>
+    </td>
+    <td width="50%">
+      <img src="./previews/luxe-login/neon.png" alt="Neon">
+      <br><div align="center"><b>Neon</b></div>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img src="./previews/luxe-login/ocean.png" alt="Ocean">
+      <br><div align="center"><b>Ocean</b></div>
+    </td>
+    <td width="50%">
+      <img src="./previews/luxe-login/curve.png" alt="Curve">
+      <br><div align="center"><b>Curve</b></div>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img src="./previews/luxe-login/matrix.png" alt="Matrix">
+      <br><div align="center"><b>Matrix</b></div>
+    </td>
+    <td width="50%">
+      <img src="./previews/luxe-login/neo-brutalism.png" alt="Neo-Brutalism">
+      <br><div align="center"><b>Neo-Brutalism</b></div>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img src="./previews/luxe-login/liquid-metal.png" alt="Liquid Metal">
+      <br><div align="center"><b>Liquid Metal</b></div>
+    </td>
+    <td width="50%">
+      <img src="./previews/luxe-login/liquid-flow.png" alt="Liquid Flow">
+      <br><div align="center"><b>Liquid Flow</b></div>
+    </td>
+  </tr>
+</table>
 
 </details>
 
 <details>
 <summary>Tampilkan Preview Dashboard</summary>
 
-![Luxe Light](./previews/luxe-home/luxe-light.png)  
-![Luxe Dark](./previews/luxe-home/luxe-dark.png)  
-![Glass Liquid](./previews/luxe-home/glass-liquid.png)  
-![Glass Luxe](./previews/luxe-home/glass-luxe.png)  
-![Glass Crystall](./previews/luxe-home/glass-crystall.png)  
-![Glass Dark](./previews/luxe-home/glass-dark.png)  
-![Neobrutalism Light](./previews/luxe-home/neobrutalism-light.png)  
-![Neobrutalism Dark](./previews/luxe-home/neobrutalism-dark.png)  
-![Neomorphism Light](./previews/luxe-home/neomorphism-light.png)  
-![Neomorphism Dark](./previews/luxe-home/neomorphism-dark.png)  
-![Neon](./previews/luxe-home/neon.png)  
-![Rgb](./previews/luxe-home/rgb.png)  
-![Glaze Light](./previews/luxe-home/glaze-light.png)  
-![Glaze Dark](./previews/luxe-home/glaze-dark.png)  
-![Onyx Light](./previews/luxe-home/onyx-light.png)  
-![Onyx Dark](./previews/luxe-home/onyx-dark.png)  
-![Liquid Neo](./previews/luxe-home/liquid-neo.png)  
-![Sample Interface](./previews/luxe-home/sample-interface.png)  
-![Sample Wireless](./previews/luxe-home/sample-wireless.png)  
-![Sample Config](./previews/luxe-home/sample-config.png)
+<table>
+  <tr>
+    <td width="50%">
+      <img src="./previews/luxe-home/luxe-light.png" alt="Luxe Light">
+      <br><div align="center"><b>Luxe Light</b></div>
+    </td>
+    <td width="50%">
+      <img src="./previews/luxe-home/luxe-dark.png" alt="Luxe Dark">
+      <br><div align="center"><b>Luxe Dark</b></div>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img src="./previews/luxe-home/glass-liquid.png" alt="Glass Liquid">
+      <br><div align="center"><b>Glass Liquid</b></div>
+    </td>
+    <td width="50%">
+      <img src="./previews/luxe-home/glass-luxe.png" alt="Glass Luxe">
+      <br><div align="center"><b>Glass Luxe</b></div>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img src="./previews/luxe-home/glass-crystall.png" alt="Glass Crystall">
+      <br><div align="center"><b>Glass Crystall</b></div>
+    </td>
+    <td width="50%">
+      <img src="./previews/luxe-home/glass-dark.png" alt="Glass Dark">
+      <br><div align="center"><b>Glass Dark</b></div>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img src="./previews/luxe-home/neobrutalish-light.png" alt="Neobrutalish Light">
+      <br><div align="center"><b>Neobrutalish Light</b></div>
+    </td>
+    <td width="50%">
+      <img src="./previews/luxe-home/neobrutalish-dark.png" alt="Neobrutalish Dark">
+      <br><div align="center"><b>Neobrutalish Dark</b></div>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img src="./previews/luxe-home/neomorphism-light.png" alt="Neomorphism Light">
+      <br><div align="center"><b>Neomorphism Light</b></div>
+    </td>
+    <td width="50%">
+      <img src="./previews/luxe-home/neomorphism-dark.png" alt="Neomorphism Dark">
+      <br><div align="center"><b>Neomorphism Dark</b></div>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img src="./previews/luxe-home/neon.png" alt="Neon">
+      <br><div align="center"><b>Neon</b></div>
+    </td>
+    <td width="50%">
+      <img src="./previews/luxe-home/rgb.png" alt="RGB">
+      <br><div align="center"><b>RGB</b></div>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img src="./previews/luxe-home/glaze-light.png" alt="Glaze Light">
+      <br><div align="center"><b>Glaze Light</b></div>
+    </td>
+    <td width="50%">
+      <img src="./previews/luxe-home/glaze-dark.png" alt="Glaze Dark">
+      <br><div align="center"><b>Glaze Dark</b></div>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img src="./previews/luxe-home/onyx-light.png" alt="Onyx Light">
+      <br><div align="center"><b>Onyx Light</b></div>
+    </td>
+    <td width="50%">
+      <img src="./previews/luxe-home/onyx-dark.png" alt="Onyx Dark">
+      <br><div align="center"><b>Onyx Dark</b></div>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img src="./previews/luxe-home/liquid-neo.png" alt="Liquid Neo">
+      <br><div align="center"><b>Liquid Neo</b></div>
+    </td>
+    <td width="50%">
+      <img src="./previews/luxe-home/sample-interface.png" alt="Sample Interface">
+      <br><div align="center"><b>Sample Interface</b></div>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img src="./previews/luxe-home/sample-wireless.png" alt="Sample Wireless">
+      <br><div align="center"><b>Sample Wireless</b></div>
+    </td>
+    <td width="50%">
+      <img src="./previews/luxe-home/sample-config.png" alt="Sample Config">
+      <br><div align="center"><b>Sample Config</b></div>
+    </td>
+  </tr>
+</table>
 
 </details>
 
