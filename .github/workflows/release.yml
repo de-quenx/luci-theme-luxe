@@ -1,0 +1,186 @@
+name: Release Theme Luxe Os
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+env:
+  PACKAGE_NAME: luci-theme-luxe
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  get-version:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+          ref: ${{ github.ref_name }}
+
+      - name: Extract version
+        id: version
+        run: |
+          set -euo pipefail
+          VERSION=$(sed -n 's/^[[:space:]]*PKG_VERSION[[:space:]]*:=[[:space:]]*//p' Makefile | head -n 1 | tr -d '[:space:]')
+          test -n "$VERSION"
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+          echo "New Version: ${VERSION}"
+
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v3
+        with:
+          tag_name: "v${{ steps.version.outputs.version }}"
+          generate_release_notes: true
+          draft: false
+          name: "Luxe v${{ steps.version.outputs.version }}"
+          body: |
+            ## Luxe v${{ steps.version.outputs.version }}
+
+            Welcome to the latest release of the **${{ env.PACKAGE_NAME }}** theme! 
+
+            ---
+
+            ### 📦 Supported Packages
+            - **OpenWrt 23.05**: IPK
+            - **OpenWrt 24.10**: IPK
+            - **OpenWrt 25.12**: APK
+            - **Architecture**: All architectures supported
+
+            ---
+
+            ### 🛠️ How to Install
+            ```bash
+            # For .ipk
+            opkg install ./${{ env.PACKAGE_NAME }}*.ipk
+            # For .apk
+            apk add --allow-untrusted ./${{ env.PACKAGE_NAME }}*.apk
+            ```
+
+            ### 💬 Feedback & Support
+            https://github.com/${{ github.repository }}/issues
+
+  release:
+    name: Release OpenWrt ${{ matrix.os_ver }}
+    needs: get-version
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: write
+    continue-on-error: false
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - arch: x86_64
+            sdk_tag: 23.05.5
+            os_ver: "23.05"
+          - arch: x86_64
+            sdk_tag: 24.10.7
+            os_ver: "24.10"
+          - arch: x86_64
+            sdk_tag: 25.12.5
+            os_ver: "25.12"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+
+      - name: Set up build environment
+        run: |
+          set -euo pipefail
+          mkdir -p "feeds/${{ env.PACKAGE_NAME }}" artifacts
+          rsync -a --delete --exclude='.git/' --exclude='feeds/' --exclude='artifacts/' --exclude='release-artifacts/' ./ "feeds/${{ env.PACKAGE_NAME }}/"
+
+      - name: Setup Makefile for OpenWrt Version
+        run: |
+          set -euo pipefail
+          OS_VERSION="${{ matrix.os_ver }}"
+          
+          # Inject version suffix if not 25.12
+          if [ "$OS_VERSION" != "25.12" ]; then
+            sed -i "s/^PKG_RELEASE:=.*/&_${OS_VERSION}/" "feeds/${{ env.PACKAGE_NAME }}/Makefile"
+          fi
+          
+          if [ "$OS_VERSION" = "23.05" ]; then
+            sed -i 's|/usr/share/ucode/luci/template/themes/|/usr/lib/lua/luci/view/themes/|g' "feeds/${{ env.PACKAGE_NAME }}/Makefile"
+            sed -i 's|\./template/\*|\./template/*.htm|g' "feeds/${{ env.PACKAGE_NAME }}/Makefile"
+          else
+            sed -i 's|\./template/\*|\./template/*.ut|g' "feeds/${{ env.PACKAGE_NAME }}/Makefile"
+          fi
+          
+          echo "Makefile updated for OpenWrt ${OS_VERSION}"
+
+      - name: Build package
+        uses: openwrt/gh-action-sdk@main
+        env:
+          ARCH: ${{ matrix.arch }}-${{ matrix.sdk_tag }}
+          ARTIFACTS_DIR: ${{ github.workspace }}/artifacts
+          FEED_DIR: ${{ github.workspace }}/feeds
+          PACKAGES: ${{ env.PACKAGE_NAME }}
+          NO_REFRESH_CHECK: true
+          V: s
+          IGNORE_ERRORS: "m n"
+
+      - name: List built packages
+        run: |
+          set -euo pipefail
+          find "${{ github.workspace }}/artifacts" -type f -name "${{ env.PACKAGE_NAME }}*.*pk" | sort
+
+      - name: Prepare release artifacts
+        run: |
+          set -euo pipefail
+          mkdir -p "${{ github.workspace }}/release-artifacts"
+          
+          PACKAGE_FILE=$(find "${{ github.workspace }}/artifacts" -type f -name "${{ env.PACKAGE_NAME }}*.*pk" | sort | head -n 1)
+          
+          if [ -z "$PACKAGE_FILE" ]; then
+            echo "Error: No package file found!"
+            exit 1
+          fi
+          
+          cp "$PACKAGE_FILE" "${{ github.workspace }}/release-artifacts/"
+          ls -la "${{ github.workspace }}/release-artifacts/"
+
+      - name: Upload release artifacts
+        uses: softprops/action-gh-release@v3
+        with:
+          tag_name: "v${{ needs.get-version.outputs.version }}"
+          files: |
+            ${{ github.workspace }}/release-artifacts/*
+          overwrite_files: true
+          fail_on_unmatched_files: true
+
+  cleanup-workflows:
+    name: Cleanup workflow runs
+    needs:
+      - get-version
+      - release
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      contents: read
+    steps:
+      - name: Auto delete old workflow runs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh run list --repo "${{ github.repository }}" --workflow "${{ github.workflow }}" --limit 100 --json databaseId --jq '.[2:][].databaseId' | while read -r RUN_ID; do
+            if [ -n "$RUN_ID" ]; then
+              gh run delete "$RUN_ID" --repo "${{ github.repository }}" || true
+            fi
+          done
