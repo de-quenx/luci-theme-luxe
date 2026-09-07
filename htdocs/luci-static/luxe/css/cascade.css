@@ -967,6 +967,13 @@ input.cbi-input-password,
     transform: translateX(20px);
     background-color: var(--bttextColor);
 }
+/* Base button shape shared by every LuCI control (form actions, opkg row
+ * actions, modal buttons, etc). A soft, low-opacity shadow is layered on top
+ * so buttons read as gently "lifted" (mewah/lembut) instead of flat, while
+ * still staying light/ringan since the shadow is subtle and inherited from
+ * the same token used for section cards. Variant themes (neo-brutalism,
+ * glassmorphism, ...) override this with !important where they need a
+ * different shadow language, so this stays a safe, theme-wide default. */
 .btn,
 .cbi-button,
 .item::after {
@@ -994,6 +1001,7 @@ input.cbi-input-password,
     touch-action: manipulation;
     padding: 0.4rem 1.3rem;
     font-weight: 500;
+    box-shadow: var(--sectionShaddow, 0 2px 8px rgba(0, 0, 0, 0.08));
 }
 .cbi-button-up,
 .cbi-button-down {
@@ -1047,6 +1055,19 @@ input.cbi-input-password,
     pointer-events: none;
     opacity: 0.5;
     box-shadow: none !important;
+}
+/* Gentle, smooth lift on hover and a soft press on click/active — a light-touch
+ * "mewah" (premium) micro-interaction that stays subtle (ringan/lembut) rather
+ * than a hard, bouncy animation. */
+.btn:hover,
+.cbi-button:hover {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    transform: translateY(-1px);
+}
+.btn:active,
+.cbi-button:active {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    transform: translateY(0);
 }
 .alert-message [class="btn"],
 .modal div[class="btn"],
@@ -2407,13 +2428,43 @@ td > .ifacebadge,
 #cbi-samba [data-tab="template"] .cbi-value-field {
     display: block;
 }
+/* --- Third-Party Packages (opkg) page: action buttons --------------------
+ * Each package row renders its actions as <div class="btn"> inside a table
+ * cell. The original rule below (line-height: 3 + display: inline) stretched
+ * the clickable/visual box of the button far past its text label, so the
+ * "Install/Remove/Update" pills looked oversized, uneven, and misaligned
+ * against the row text ("tidak pas"). Switching to inline-flex makes each
+ * button hug its own label and center itself vertically, matching the same
+ * rounded, soft (lembut) pill used by every other button in the theme. */
 [data-page="admin-system-package-manager"] div.btn {
-    line-height: 3;
-    display: inline;
-    padding: 0.3rem 0.6rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: normal;
+    padding: 0.35rem 0.9rem;
+    margin: 0.15rem 0;
 }
+/* The action cell itself gets more breathing room (was flex-basis: 2em from
+ * the generic .td[data-type="button"] rule, too narrow for a label like
+ * "Uninstall") and wraps multiple buttons on their own row with a small,
+ * even gap instead of the fixed .btn + .btn margin used elsewhere. */
+[data-page="admin-system-package-manager"] .td[data-type="button"] {
+    flex-basis: 9em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+[data-page="admin-system-package-manager"] .td[data-type="button"] .btn + .btn {
+    margin-left: 0;
+}
+/* Keep this page inside the same centered, width-capped content column as
+ * the rest of the theme (see the base #maincontent > .container rule); only
+ * the vertical rhythm is tweaked here since opkg's search bar sits directly
+ * under the header. */
 [data-page="admin-system-package-manager"] #maincontent > .container {
-    margin: 2rem 2rem 1rem;
+    margin: 2rem auto 1rem;
 }
 .td.version,
 .td.size {
@@ -3038,9 +3089,11 @@ td > .ifacebadge,
         margin: 0 auto 1.5rem !important;
         padding: 0 1rem !important;
     }
+    /* Was padding: 0.2rem, almost no gutter at all — too tight for comfortable
+     * tapping on phones. Bumped up slightly so rows/buttons don't feel cramped. */
     [data-page="admin-system-package-manager"] #maincontent > .container {
         margin: 0 auto 1.5rem !important;
-        padding: 0.2rem !important;
+        padding: 0.5rem !important;
     }
     .main > .main-left > .nav > li > a,
     .main > .main-left > .nav > .slide > .menu,
