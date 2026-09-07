@@ -411,8 +411,15 @@ body.show-hostname header > .fill > .container .brand.hostname {
     opacity: 0;
     animation: smooth-open 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
+/* Main content column.
+ * max-width keeps the layout comfortable and "not too big" on large / ultra-wide
+ * screens, while margin: auto centres it in the space left of the fixed sidebar.
+ * Side padding provides the gutter (replaces the old fixed 2rem side margins) so
+ * the width cap and centring stay consistent across every breakpoint. */
 #maincontent > .container {
-    margin: 0 2rem 5rem;
+    max-width: 1600px;
+    margin: 0 auto 5rem;
+    padding: 0 2rem;
 }
 .main-right > #maincontent {
     background-color: transparent;
@@ -3025,11 +3032,14 @@ td > .ifacebadge,
         margin: 1rem 0 0;
         padding: 1rem 1.2rem !important;
     }
+    /* On phones/tablets keep the content full-width (cap never applies here) and
+     * shrink the side gutter to 1rem so forms and tables use the available space. */
     #maincontent > .container {
-        margin: 0 1rem 1.5rem !important;
+        margin: 0 auto 1.5rem !important;
+        padding: 0 1rem !important;
     }
     [data-page="admin-system-package-manager"] #maincontent > .container {
-        margin: 0 1rem 1.5rem !important;
+        margin: 0 auto 1.5rem !important;
         padding: 0.2rem !important;
     }
     .main > .main-left > .nav > li > a,
