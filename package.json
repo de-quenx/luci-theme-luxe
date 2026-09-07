@@ -1,0 +1,25 @@
+{
+  "name": "luci-theme-luxe",
+  "version": "2.7.0",
+  "private": true,
+  "description": "Build toolchain for the LuCI Luxe theme stylesheets (LESS -> CSS)",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/de-quenx/luci-theme-luxe.git"
+  },
+  "bugs": {
+    "url": "https://github.com/de-quenx/luci-theme-luxe/issues"
+  },
+  "homepage": "https://github.com/de-quenx/luci-theme-luxe#readme",
+  "type": "commonjs",
+  "scripts": {
+    "build": "npm run build:palette && npm run build:cascade",
+    "build:palette": "lessc src/less/luxe.less htdocs/luci-static/luxe/css/luxe.css",
+    "build:cascade": "lessc src/less/cascade.less htdocs/luci-static/luxe/css/cascade.css",
+    "watch": "lessc --watch src/less/cascade.less htdocs/luci-static/luxe/css/cascade.css"
+  },
+  "devDependencies": {
+    "less": "^4.9.1"
+  }
+}

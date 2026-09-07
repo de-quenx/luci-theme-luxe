@@ -1,0 +1,128 @@
+/* luci-theme-luxe - reusable mixins */
+
+/* Media queries ---------------------------------------------------------- */
+.media-down(@max; @rules) {
+    @media screen and (max-width: @max) {
+        @rules();
+    }
+}
+
+.media-up(@min; @rules) {
+    @media screen and (min-width: @min) {
+        @rules();
+    }
+}
+
+.media-touch(@rules) {
+    @media (hover: none) and (pointer: coarse) {
+        @rules();
+    }
+}
+
+/* Motion ----------------------------------------------------------------- */
+.transition(@props: all; @dur: @dur-base; @ease: @ease-smooth) {
+    transition: @props @dur @ease;
+}
+
+/* Opt out of every animation for users who ask for reduced motion. */
+.motion-safe(@rules) {
+    @media (prefers-reduced-motion: no-preference) {
+        @rules();
+    }
+}
+
+/* Layout helpers --------------------------------------------------------- */
+.flex-center() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-between() {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.truncate() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.absolute-fill() {
+    position: absolute;
+    inset: 0;
+}
+
+/* Surfaces --------------------------------------------------------------- */
+.surface(@radius-size: @radius) {
+    background-color: var(--sectionbgColor);
+    border: var(--sectionBorder);
+    border-radius: @radius-size;
+    box-shadow: var(--sectionShaddow);
+}
+
+.focus-ring() {
+    outline: none;
+    border-color: var(--activeColor);
+    box-shadow: 0 0 0 3px var(--focusColor);
+}
+
+/* Scrollbars: thin and themed, with a Firefox fallback. */
+.scrollbar(@size: 6px) {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbarColor) transparent;
+
+    &::-webkit-scrollbar {
+        width: @size;
+        height: @size;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: var(--scrollbarColor);
+        border-radius: @radius-pill;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: var(--activeColor);
+    }
+}
+
+.scrollbar-hidden() {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+/* Buttons ---------------------------------------------------------------- */
+.button-variant(@bg; @bg-hover) {
+    background-color: @bg !important;
+    border-color: @bg !important;
+
+    &:hover,
+    &:focus-visible {
+        background-color: @bg-hover !important;
+        border-color: @bg-hover !important;
+    }
+}
+
+/* Accessibility ---------------------------------------------------------- */
+.sr-only() {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}

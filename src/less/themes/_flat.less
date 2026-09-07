@@ -1,0 +1,648 @@
+/* Opaque styles that ship both a light and a dark variant:
+ * neobrutalism, neomorphism, glaze, onyx and liquid metal.
+ */
+
+/* Neobrutalism ----------------------------------------------------------- */
+[data-theme="neo"],
+[data-theme="neo"][data-force-scheme="light"] {
+    --bg: #fffdf5;
+    --mainbg: #fffdf5;
+    --bgwhite: #ffffff;
+    --activeColor: #1a1a1a;
+    --activeBottom: #1a1a1a 3px solid;
+    --textColor: #1a1a1a;
+    --mutedColor: #4a4a4a;
+    --borderColor: #1a1a1a;
+    --navbgColor: #ffe066;
+    --navBorder: 3px solid #1a1a1a;
+    --sectionbgColor: #ffffff;
+    --sectionbgColor2: #fff4d6;
+    --sectionShaddow: 4px 4px 0 #1a1a1a;
+    --sectionBorder: 3px solid #1a1a1a;
+    --sectiontabBorder: 3px solid #1a1a1a;
+    --tabmenuBorderLR: 3px solid #1a1a1a;
+    --tabmenubgColor: #ffe066;
+    --tabmenuBottom: #1a1a1a 3px solid;
+    --sectionnodeBorder: #1a1a1a 3px solid;
+    --cbilineColor: #1a1a1a 2px solid;
+    --tabbgColor: #ffffff;
+    --inputbgColor: #ffffff;
+    --inputtextColor: #1a1a1a;
+    --inputBorder: 3px solid #1a1a1a;
+    --mainleftbgColor: #fff4d6;
+    --badgebgColor: #a5f3c9;
+    --badgeBorder: #1a1a1a 2px solid;
+    --progressbarColor: #ffffff;
+    --progressbar: #ff5c8a;
+    --progressbartxtColor: #1a1a1a;
+    --progressbartxtShadow: none;
+    --logo_color: #1a1a1a;
+    --alertBackground: #ff5c8a;
+    --alertColor: #1a1a1a;
+    --modelBackground: #ffffff;
+    --scrollbarColor: #1a1a1a;
+    --focusColor: rgba(26, 26, 26, 0.2);
+    --codeBg: #fff4d6;
+    --codeColor: #1a1a1a;
+    --btnPrimary: #4d7cff;
+    --btnPrimaryHover: #3563e9;
+    --btnSecondary: #d9d9d9;
+    --btnSecondaryHover: #bfbfbf;
+    --btnInfo: #56ccf2;
+    --btnInfoHover: #2d9cdb;
+    --btnDanger: #ff5c5c;
+    --btnDangerHover: #e83b3b;
+    --btnWarning: #ffb703;
+    --btnWarningHover: #e5a300;
+    --btnSuccess: #3ddc84;
+    --btnSuccessHover: #24c06b;
+    --bttextColor: #1a1a1a;
+    --tableBorder: #1a1a1a;
+    --tabmenuRadius: 0;
+    --overlayColor: rgba(26, 26, 26, 0.5);
+}
+
+[data-theme="neo"][data-force-scheme="dark"] {
+    --bg: #17161c;
+    --mainbg: #17161c;
+    --bgwhite: #201f27;
+    --activeColor: #ffe066;
+    --activeBottom: #ffe066 3px solid;
+    --textColor: #f7f7f7;
+    --mutedColor: #b8b8c0;
+    --borderColor: #f7f7f7;
+    --navbgColor: #2b2933;
+    --navBorder: 3px solid #f7f7f7;
+    --sectionbgColor: #201f27;
+    --sectionbgColor2: #2b2933;
+    --sectionShaddow: 4px 4px 0 #ffe066;
+    --sectionBorder: 3px solid #f7f7f7;
+    --sectiontabBorder: 3px solid #f7f7f7;
+    --tabmenuBorderLR: 3px solid #f7f7f7;
+    --tabmenubgColor: #2b2933;
+    --tabmenuBottom: #f7f7f7 3px solid;
+    --sectionnodeBorder: #f7f7f7 3px solid;
+    --cbilineColor: rgba(247, 247, 247, 0.4) 2px solid;
+    --tabbgColor: #201f27;
+    --inputbgColor: #17161c;
+    --inputtextColor: #f7f7f7;
+    --inputBorder: 3px solid #f7f7f7;
+    --mainleftbgColor: #201f27;
+    --badgebgColor: #2b2933;
+    --badgeBorder: #f7f7f7 2px solid;
+    --progressbarColor: #2b2933;
+    --progressbar: #ffe066;
+    --progressbartxtColor: #17161c;
+    --progressbartxtShadow: none;
+    --logo_color: #ffe066;
+    --alertBackground: #ff5c8a;
+    --alertColor: #17161c;
+    --modelBackground: #201f27;
+    --scrollbarColor: #ffe066;
+    --focusColor: rgba(255, 224, 102, 0.25);
+    --codeBg: #17161c;
+    --codeColor: #ffe066;
+    --btnPrimary: #4d7cff;
+    --btnPrimaryHover: #3563e9;
+    --btnSecondary: #3a3844;
+    --btnSecondaryHover: #4b4857;
+    --btnDanger: #ff5c5c;
+    --btnDangerHover: #e83b3b;
+    --btnWarning: #ffb703;
+    --btnWarningHover: #e5a300;
+    --btnSuccess: #3ddc84;
+    --btnSuccessHover: #24c06b;
+    --bttextColor: #17161c;
+    --tableBorder: #f7f7f7;
+    --overlayColor: rgba(0, 0, 0, 0.65);
+}
+
+/* Neomorphism ------------------------------------------------------------ */
+[data-theme="neox"],
+[data-theme="neox"][data-force-scheme="light"] {
+    --bg: #e8ecf3;
+    --mainbg: #e8ecf3;
+    --bgwhite: #e8ecf3;
+    --activeColor: #5b7cfa;
+    --activeBottom: #5b7cfa 2px solid;
+    --textColor: #3d4759;
+    --mutedColor: #7b869c;
+    --borderColor: rgba(61, 71, 89, 0.06);
+    --navbgColor: #e8ecf3;
+    --navBorder: none;
+    --sectionbgColor: #e8ecf3;
+    --sectionbgColor2: #eef1f7;
+    --sectionShaddow: 6px 6px 14px #ccd2de, -6px -6px 14px #ffffff;
+    --sectionBorder: 1px solid rgba(255, 255, 255, 0.6);
+    --sectiontabBorder: 1px solid rgba(255, 255, 255, 0.6);
+    --tabmenuBorderLR: none;
+    --tabmenubgColor: #e8ecf3;
+    --tabmenuBottom: none;
+    --sectionnodeBorder: 1px solid rgba(255, 255, 255, 0.6);
+    --cbilineColor: rgba(204, 210, 222, 0.6) 1px solid;
+    --tabbgColor: #e8ecf3;
+    --inputbgColor: #e8ecf3;
+    --inputtextColor: #3d4759;
+    --inputBorder: none;
+    --mainleftbgColor: #e8ecf3;
+    --badgebgColor: #e8ecf3;
+    --badgeBorder: none;
+    --progressbarColor: #dde2ec;
+    --progressbar: #5b7cfa;
+    --progressbartxtColor: #3d4759;
+    --progressbartxtShadow: 0 1px 0 #ffffff;
+    --logo_color: #3d4759;
+    --alertBackground: #5b7cfa;
+    --alertColor: #ffffff;
+    --modelBackground: #e8ecf3;
+    --scrollbarColor: #ccd2de;
+    --focusColor: rgba(91, 124, 250, 0.2);
+    --codeBg: #dde2ec;
+    --codeColor: #4b5563;
+    --btnPrimary: #5b7cfa;
+    --btnPrimaryHover: #4a68e0;
+    --btnSecondary: #b6bfd0;
+    --btnSecondaryHover: #9aa5ba;
+    --btnInfo: #38bdf8;
+    --btnInfoHover: #0ea5e9;
+    --btnDanger: #f0637a;
+    --btnDangerHover: #dc4a63;
+    --btnWarning: #f5a524;
+    --btnWarningHover: #db8f14;
+    --btnSuccess: #34d399;
+    --btnSuccessHover: #10b981;
+    --bttextColor: #ffffff;
+    --tableBorder: rgba(204, 210, 222, 0.7);
+    --tabmenuRadius: @radius;
+    --overlayColor: rgba(61, 71, 89, 0.35);
+    --neoxShadowOut: 6px 6px 14px #ccd2de, -6px -6px 14px #ffffff;
+    --neoxShadowIn: inset 4px 4px 9px #ccd2de, inset -4px -4px 9px #ffffff;
+}
+
+[data-theme="neox"][data-force-scheme="dark"] {
+    --bg: #1c2135;
+    --mainbg: #1c2135;
+    --bgwhite: #1c2135;
+    --activeColor: #38bdf8;
+    --activeBottom: #38bdf8 2px solid;
+    --textColor: #e2e8f0;
+    --mutedColor: #94a3b8;
+    --borderColor: rgba(226, 232, 240, 0.06);
+    --navbgColor: #1c2135;
+    --navBorder: none;
+    --sectionbgColor: #1c2135;
+    --sectionbgColor2: #222842;
+    --sectionShaddow: 6px 6px 14px #131725, -6px -6px 14px #252b45;
+    --sectionBorder: 1px solid rgba(255, 255, 255, 0.04);
+    --sectiontabBorder: 1px solid rgba(255, 255, 255, 0.04);
+    --tabmenuBorderLR: none;
+    --tabmenubgColor: #1c2135;
+    --tabmenuBottom: none;
+    --sectionnodeBorder: 1px solid rgba(255, 255, 255, 0.04);
+    --cbilineColor: rgba(255, 255, 255, 0.06) 1px solid;
+    --tabbgColor: #1c2135;
+    --inputbgColor: #1c2135;
+    --inputtextColor: #e2e8f0;
+    --inputBorder: none;
+    --mainleftbgColor: #1c2135;
+    --badgebgColor: #1c2135;
+    --badgeBorder: none;
+    --progressbarColor: #171b2c;
+    --progressbar: #38bdf8;
+    --progressbartxtColor: #e2e8f0;
+    --progressbartxtShadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+    --logo_color: #38bdf8;
+    --alertBackground: #38bdf8;
+    --alertColor: #0b1120;
+    --modelBackground: #1c2135;
+    --scrollbarColor: #313a5c;
+    --focusColor: rgba(56, 189, 248, 0.25);
+    --codeBg: #171b2c;
+    --codeColor: #93c5fd;
+    --btnPrimary: #38bdf8;
+    --btnPrimaryHover: #0ea5e9;
+    --btnSecondary: #313a5c;
+    --btnSecondaryHover: #414c75;
+    --btnDanger: #f0637a;
+    --btnDangerHover: #dc4a63;
+    --btnWarning: #f5a524;
+    --btnWarningHover: #db8f14;
+    --btnSuccess: #34d399;
+    --btnSuccessHover: #10b981;
+    --bttextColor: #0b1120;
+    --tableBorder: rgba(255, 255, 255, 0.06);
+    --overlayColor: rgba(6, 9, 18, 0.6);
+    --neoxShadowOut: 6px 6px 14px #131725, -6px -6px 14px #252b45;
+    --neoxShadowIn: inset 4px 4px 9px #131725, inset -4px -4px 9px #252b45;
+}
+
+/* Neomorphism relies on soft shadows instead of borders. */
+[data-theme="neox"] {
+    .main-left,
+    .navbar,
+    header {
+        box-shadow: var(--neoxShadowOut);
+        border: none;
+    }
+
+    input,
+    select,
+    textarea,
+    .cbi-dropdown {
+        box-shadow: var(--neoxShadowIn);
+        border-radius: @radius;
+    }
+
+    .btn,
+    .cbi-button {
+        box-shadow: var(--neoxShadowOut);
+        border: none;
+
+        &:active {
+            box-shadow: var(--neoxShadowIn);
+        }
+    }
+}
+
+/* Glaze ------------------------------------------------------------------ */
+[data-theme="glaze"],
+[data-theme="glaze"][data-force-scheme="light"] {
+    --bg: #f6f8fc;
+    --mainbg: #f6f8fc;
+    --bgwhite: #ffffff;
+    --activeColor: #7c5cff;
+    --activeBottom: #7c5cff 2px solid;
+    --textColor: #262b3c;
+    --mutedColor: #6d7488;
+    --borderColor: rgba(124, 92, 255, 0.14);
+    --navbgColor: rgba(255, 255, 255, 0.86);
+    --navBorder: 1px solid rgba(124, 92, 255, 0.14);
+    --sectionbgColor: rgba(255, 255, 255, 0.9);
+    --sectionbgColor2: rgba(246, 248, 252, 0.94);
+    --sectionShaddow: 0 4px 18px rgba(124, 92, 255, 0.1);
+    --sectionBorder: 1px solid rgba(124, 92, 255, 0.14);
+    --sectiontabBorder: 1px solid rgba(124, 92, 255, 0.14);
+    --tabmenuBorderLR: 1px solid rgba(124, 92, 255, 0.14);
+    --tabmenubgColor: rgba(255, 255, 255, 0.9);
+    --tabmenuBottom: rgba(124, 92, 255, 0.14) 1px solid;
+    --sectionnodeBorder: rgba(124, 92, 255, 0.14) 1px solid;
+    --cbilineColor: rgba(124, 92, 255, 0.1) 1px solid;
+    --tabbgColor: rgba(255, 255, 255, 0.9);
+    --inputbgColor: rgba(255, 255, 255, 0.95);
+    --inputtextColor: #262b3c;
+    --inputBorder: 1px solid rgba(124, 92, 255, 0.2);
+    --mainleftbgColor: rgba(255, 255, 255, 0.9);
+    --badgebgColor: rgba(124, 92, 255, 0.1);
+    --badgeBorder: rgba(124, 92, 255, 0.2) 1px solid;
+    --progressbarColor: rgba(124, 92, 255, 0.14);
+    --progressbar: #7c5cff;
+    --progressbartxtColor: #262b3c;
+    --progressbartxtShadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+    --logo_color: #7c5cff;
+    --alertBackground: #7c5cff;
+    --alertColor: #ffffff;
+    --modelBackground: #ffffff;
+    --scrollbarColor: rgba(124, 92, 255, 0.35);
+    --focusColor: rgba(124, 92, 255, 0.22);
+    --codeBg: rgba(124, 92, 255, 0.08);
+    --codeColor: #5b3fd6;
+    --btnPrimary: #7c5cff;
+    --btnPrimaryHover: #6845e8;
+    --btnSecondary: #aab1c4;
+    --btnSecondaryHover: #8e96ad;
+    --btnInfo: #38bdf8;
+    --btnInfoHover: #0ea5e9;
+    --btnDanger: #f43f5e;
+    --btnDangerHover: #e11d48;
+    --btnWarning: #f59e0b;
+    --btnWarningHover: #d97706;
+    --btnSuccess: #10b981;
+    --btnSuccessHover: #059669;
+    --bttextColor: #ffffff;
+    --tableBorder: rgba(124, 92, 255, 0.14);
+    --tabmenuRadius: @radius;
+    --overlayColor: rgba(38, 43, 60, 0.4);
+}
+
+[data-theme="glaze"][data-force-scheme="dark"] {
+    --bg: #14162b;
+    --mainbg: #14162b;
+    --bgwhite: #1b1e38;
+    --activeColor: #a78bfa;
+    --activeBottom: #a78bfa 2px solid;
+    --textColor: #e9e7fb;
+    --mutedColor: #a5a3c4;
+    --borderColor: rgba(167, 139, 250, 0.2);
+    --navbgColor: rgba(27, 30, 56, 0.9);
+    --navBorder: 1px solid rgba(167, 139, 250, 0.2);
+    --sectionbgColor: rgba(27, 30, 56, 0.9);
+    --sectionbgColor2: rgba(33, 37, 68, 0.94);
+    --sectionShaddow: 0 4px 18px rgba(0, 0, 0, 0.4);
+    --sectionBorder: 1px solid rgba(167, 139, 250, 0.2);
+    --sectiontabBorder: 1px solid rgba(167, 139, 250, 0.2);
+    --tabmenuBorderLR: 1px solid rgba(167, 139, 250, 0.2);
+    --tabmenubgColor: rgba(27, 30, 56, 0.9);
+    --tabmenuBottom: rgba(167, 139, 250, 0.2) 1px solid;
+    --sectionnodeBorder: rgba(167, 139, 250, 0.2) 1px solid;
+    --cbilineColor: rgba(167, 139, 250, 0.14) 1px solid;
+    --tabbgColor: rgba(27, 30, 56, 0.9);
+    --inputbgColor: rgba(20, 22, 43, 0.95);
+    --inputtextColor: #e9e7fb;
+    --inputBorder: 1px solid rgba(167, 139, 250, 0.28);
+    --mainleftbgColor: rgba(27, 30, 56, 0.9);
+    --badgebgColor: rgba(167, 139, 250, 0.14);
+    --badgeBorder: rgba(167, 139, 250, 0.28) 1px solid;
+    --progressbarColor: rgba(167, 139, 250, 0.18);
+    --progressbar: #a78bfa;
+    --progressbartxtColor: #e9e7fb;
+    --progressbartxtShadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+    --logo_color: #a78bfa;
+    --alertBackground: #a78bfa;
+    --alertColor: #14162b;
+    --modelBackground: #1b1e38;
+    --scrollbarColor: rgba(167, 139, 250, 0.4);
+    --focusColor: rgba(167, 139, 250, 0.28);
+    --codeBg: rgba(20, 22, 43, 0.9);
+    --codeColor: #c4b5fd;
+    --btnPrimary: #a78bfa;
+    --btnPrimaryHover: #8b5cf6;
+    --btnSecondary: #363a63;
+    --btnSecondaryHover: #464b7d;
+    --btnDanger: #f43f5e;
+    --btnDangerHover: #e11d48;
+    --btnWarning: #f59e0b;
+    --btnWarningHover: #d97706;
+    --btnSuccess: #10b981;
+    --btnSuccessHover: #059669;
+    --bttextColor: #14162b;
+    --tableBorder: rgba(167, 139, 250, 0.2);
+    --overlayColor: rgba(6, 7, 18, 0.6);
+}
+
+body[data-theme="glaze"] {
+    background: linear-gradient(150deg, #f6f8fc 0%, #e9e4ff 60%, #f2eaff 100%);
+    background-attachment: fixed;
+}
+
+body[data-theme="glaze"][data-force-scheme="dark"] {
+    background: linear-gradient(150deg, #14162b 0%, #241d47 55%, #131629 100%);
+    background-attachment: fixed;
+}
+
+/* Onyx ------------------------------------------------------------------- */
+[data-theme="onyx"],
+[data-theme="onyx"][data-force-scheme="light"] {
+    --bg: #f4f4f5;
+    --mainbg: #f4f4f5;
+    --bgwhite: #ffffff;
+    --activeColor: #18181b;
+    --activeBottom: #18181b 2px solid;
+    --textColor: #18181b;
+    --mutedColor: #71717a;
+    --borderColor: rgba(24, 24, 27, 0.1);
+    --navbgColor: #ffffff;
+    --navBorder: 1px solid rgba(24, 24, 27, 0.1);
+    --sectionbgColor: #ffffff;
+    --sectionbgColor2: #fafafa;
+    --sectionShaddow: 0 1px 3px rgba(24, 24, 27, 0.06);
+    --sectionBorder: 1px solid rgba(24, 24, 27, 0.1);
+    --sectiontabBorder: 1px solid rgba(24, 24, 27, 0.1);
+    --tabmenuBorderLR: 1px solid rgba(24, 24, 27, 0.1);
+    --tabmenubgColor: #ffffff;
+    --tabmenuBottom: rgba(24, 24, 27, 0.1) 1px solid;
+    --sectionnodeBorder: rgba(24, 24, 27, 0.1) 1px solid;
+    --cbilineColor: rgba(24, 24, 27, 0.07) 1px solid;
+    --tabbgColor: #ffffff;
+    --inputbgColor: #fafafa;
+    --inputtextColor: #18181b;
+    --inputBorder: 1px solid rgba(24, 24, 27, 0.14);
+    --mainleftbgColor: #ffffff;
+    --badgebgColor: #f4f4f5;
+    --badgeBorder: rgba(24, 24, 27, 0.1) 1px solid;
+    --progressbarColor: #e4e4e7;
+    --progressbar: #18181b;
+    --progressbartxtColor: #ffffff;
+    --progressbartxtShadow: none;
+    --logo_color: #18181b;
+    --alertBackground: #18181b;
+    --alertColor: #ffffff;
+    --modelBackground: #ffffff;
+    --scrollbarColor: #d4d4d8;
+    --focusColor: rgba(24, 24, 27, 0.14);
+    --codeBg: #f4f4f5;
+    --codeColor: #3f3f46;
+    --btnPrimary: #18181b;
+    --btnPrimaryHover: #27272a;
+    --btnSecondary: #a1a1aa;
+    --btnSecondaryHover: #71717a;
+    --btnInfo: #0284c7;
+    --btnInfoHover: #0369a1;
+    --btnDanger: #dc2626;
+    --btnDangerHover: #b91c1c;
+    --btnWarning: #ca8a04;
+    --btnWarningHover: #a16207;
+    --btnSuccess: #16a34a;
+    --btnSuccessHover: #15803d;
+    --bttextColor: #ffffff;
+    --tableBorder: rgba(24, 24, 27, 0.1);
+    --tabmenuRadius: @radius-sm;
+    --overlayColor: rgba(24, 24, 27, 0.45);
+}
+
+[data-theme="onyx"][data-force-scheme="dark"] {
+    --bg: #09090b;
+    --mainbg: #09090b;
+    --bgwhite: #131316;
+    --activeColor: #fafafa;
+    --activeBottom: #fafafa 2px solid;
+    --textColor: #fafafa;
+    --mutedColor: #a1a1aa;
+    --borderColor: rgba(250, 250, 250, 0.12);
+    --navbgColor: #131316;
+    --navBorder: 1px solid rgba(250, 250, 250, 0.12);
+    --sectionbgColor: #131316;
+    --sectionbgColor2: #18181b;
+    --sectionShaddow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    --sectionBorder: 1px solid rgba(250, 250, 250, 0.12);
+    --sectiontabBorder: 1px solid rgba(250, 250, 250, 0.12);
+    --tabmenuBorderLR: 1px solid rgba(250, 250, 250, 0.12);
+    --tabmenubgColor: #131316;
+    --tabmenuBottom: rgba(250, 250, 250, 0.12) 1px solid;
+    --sectionnodeBorder: rgba(250, 250, 250, 0.12) 1px solid;
+    --cbilineColor: rgba(250, 250, 250, 0.08) 1px solid;
+    --tabbgColor: #131316;
+    --inputbgColor: #09090b;
+    --inputtextColor: #fafafa;
+    --inputBorder: 1px solid rgba(250, 250, 250, 0.16);
+    --mainleftbgColor: #131316;
+    --badgebgColor: #1f1f23;
+    --badgeBorder: rgba(250, 250, 250, 0.12) 1px solid;
+    --progressbarColor: #27272a;
+    --progressbar: #fafafa;
+    --progressbartxtColor: #09090b;
+    --progressbartxtShadow: none;
+    --logo_color: #fafafa;
+    --alertBackground: #fafafa;
+    --alertColor: #09090b;
+    --modelBackground: #131316;
+    --scrollbarColor: #3f3f46;
+    --focusColor: rgba(250, 250, 250, 0.18);
+    --codeBg: #09090b;
+    --codeColor: #d4d4d8;
+    --btnPrimary: #fafafa;
+    --btnPrimaryHover: #e4e4e7;
+    --btnSecondary: #27272a;
+    --btnSecondaryHover: #3f3f46;
+    --btnDanger: #ef4444;
+    --btnDangerHover: #dc2626;
+    --btnWarning: #eab308;
+    --btnWarningHover: #ca8a04;
+    --btnSuccess: #22c55e;
+    --btnSuccessHover: #16a34a;
+    --bttextColor: #09090b;
+    --tableBorder: rgba(250, 250, 250, 0.12);
+    --overlayColor: rgba(0, 0, 0, 0.7);
+}
+
+/* Liquid metal ----------------------------------------------------------- */
+[data-theme="liquid-metal"],
+[data-theme="liquid-metal"][data-force-scheme="light"] {
+    --bg: transparent;
+    --mainbg: transparent;
+    --bgwhite: rgba(255, 255, 255, 0.72);
+    --activeColor: #3f5b8c;
+    --activeBottom: #3f5b8c 2px solid;
+    --textColor: #232a38;
+    --mutedColor: #5c6779;
+    --borderColor: rgba(255, 255, 255, 0.6);
+    --navbgColor: rgba(255, 255, 255, 0.6);
+    --navBorder: 1px solid rgba(255, 255, 255, 0.7);
+    --sectionbgColor: rgba(255, 255, 255, 0.66);
+    --sectionbgColor2: rgba(255, 255, 255, 0.48);
+    --sectionShaddow: 0 6px 20px rgba(80, 95, 125, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.75);
+    --sectionBorder: 1px solid rgba(255, 255, 255, 0.7);
+    --sectiontabBorder: 1px solid rgba(255, 255, 255, 0.7);
+    --tabmenuBorderLR: 1px solid rgba(255, 255, 255, 0.7);
+    --tabmenubgColor: rgba(255, 255, 255, 0.6);
+    --tabmenuBottom: rgba(255, 255, 255, 0.7) 1px solid;
+    --sectionnodeBorder: rgba(255, 255, 255, 0.7) 1px solid;
+    --cbilineColor: rgba(120, 132, 155, 0.2) 1px solid;
+    --tabbgColor: rgba(255, 255, 255, 0.6);
+    --inputbgColor: rgba(255, 255, 255, 0.78);
+    --inputtextColor: #232a38;
+    --inputBorder: 1px solid rgba(255, 255, 255, 0.85);
+    --mainleftbgColor: rgba(255, 255, 255, 0.62);
+    --badgebgColor: rgba(255, 255, 255, 0.6);
+    --badgeBorder: rgba(255, 255, 255, 0.8) 1px solid;
+    --progressbarColor: rgba(255, 255, 255, 0.55);
+    --progressbar: linear-gradient(90deg, #8fa2bf, #3f5b8c);
+    --progressbartxtColor: #232a38;
+    --progressbartxtShadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+    --logo_color: #3f5b8c;
+    --alertBackground: #3f5b8c;
+    --alertColor: #ffffff;
+    --modelBackground: rgba(248, 250, 253, 0.96);
+    --scrollbarColor: rgba(120, 132, 155, 0.45);
+    --focusColor: rgba(63, 91, 140, 0.2);
+    --codeBg: rgba(255, 255, 255, 0.6);
+    --codeColor: #2f3a4d;
+    --btnPrimary: #3f5b8c;
+    --btnPrimaryHover: #334a75;
+    --btnSecondary: #9aa5b8;
+    --btnSecondaryHover: #7d899e;
+    --btnInfo: #4d90c4;
+    --btnInfoHover: #3a78a8;
+    --btnDanger: #c2506a;
+    --btnDangerHover: #a63e56;
+    --btnWarning: #c98a3c;
+    --btnWarningHover: #ab7130;
+    --btnSuccess: #3f9c7a;
+    --btnSuccessHover: #338265;
+    --bttextColor: #ffffff;
+    --tableBorder: rgba(255, 255, 255, 0.6);
+    --tabmenuRadius: @radius;
+    --overlayColor: rgba(35, 42, 56, 0.35);
+}
+
+[data-theme="liquid-metal"][data-force-scheme="dark"] {
+    --bgwhite: rgba(30, 35, 46, 0.7);
+    --activeColor: #9db4d8;
+    --activeBottom: #9db4d8 2px solid;
+    --textColor: #e6ebf4;
+    --mutedColor: #a3adc0;
+    --borderColor: rgba(255, 255, 255, 0.12);
+    --navbgColor: rgba(30, 35, 46, 0.62);
+    --navBorder: 1px solid rgba(255, 255, 255, 0.14);
+    --sectionbgColor: rgba(30, 35, 46, 0.66);
+    --sectionbgColor2: rgba(38, 44, 58, 0.6);
+    --sectionShaddow: 0 6px 20px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    --sectionBorder: 1px solid rgba(255, 255, 255, 0.14);
+    --sectiontabBorder: 1px solid rgba(255, 255, 255, 0.14);
+    --tabmenuBorderLR: 1px solid rgba(255, 255, 255, 0.14);
+    --tabmenubgColor: rgba(30, 35, 46, 0.66);
+    --tabmenuBottom: rgba(255, 255, 255, 0.14) 1px solid;
+    --sectionnodeBorder: rgba(255, 255, 255, 0.14) 1px solid;
+    --cbilineColor: rgba(255, 255, 255, 0.1) 1px solid;
+    --tabbgColor: rgba(30, 35, 46, 0.66);
+    --inputbgColor: rgba(20, 24, 33, 0.75);
+    --inputtextColor: #e6ebf4;
+    --inputBorder: 1px solid rgba(255, 255, 255, 0.16);
+    --mainleftbgColor: rgba(30, 35, 46, 0.68);
+    --badgebgColor: rgba(255, 255, 255, 0.08);
+    --badgeBorder: rgba(255, 255, 255, 0.16) 1px solid;
+    --progressbarColor: rgba(255, 255, 255, 0.1);
+    --progressbar: linear-gradient(90deg, #4b5f80, #9db4d8);
+    --progressbartxtColor: #e6ebf4;
+    --progressbartxtShadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+    --logo_color: #9db4d8;
+    --alertBackground: #9db4d8;
+    --alertColor: #141821;
+    --modelBackground: rgba(26, 30, 40, 0.97);
+    --scrollbarColor: rgba(157, 180, 216, 0.4);
+    --focusColor: rgba(157, 180, 216, 0.24);
+    --codeBg: rgba(20, 24, 33, 0.7);
+    --codeColor: #c3d1e8;
+    --btnPrimary: #4b5f80;
+    --btnPrimaryHover: #5c7399;
+    --btnSecondary: #333a49;
+    --btnSecondaryHover: #454e61;
+    --btnDanger: #c2506a;
+    --btnDangerHover: #a63e56;
+    --btnWarning: #c98a3c;
+    --btnWarningHover: #ab7130;
+    --btnSuccess: #3f9c7a;
+    --btnSuccessHover: #338265;
+    --bttextColor: #f2f6fc;
+    --tableBorder: rgba(255, 255, 255, 0.14);
+    --overlayColor: rgba(0, 0, 0, 0.55);
+}
+
+body[data-theme="liquid-metal"],
+body[data-theme="liquid-metal"][data-force-scheme="light"] {
+    background: linear-gradient(160deg, #f4f5f7 0%, #cfd6e2 45%, #b8c0cf 100%);
+    background-attachment: fixed;
+}
+
+body[data-theme="liquid-metal"][data-force-scheme="dark"] {
+    background: linear-gradient(160deg, #1b1f29 0%, #2a3140 45%, #141821 100%);
+    background-attachment: fixed;
+}
+
+[data-theme="liquid-metal"] {
+    .main-left,
+    .navbar,
+    .modal,
+    header {
+        backdrop-filter: blur(14px) saturate(150%);
+        -webkit-backdrop-filter: blur(14px) saturate(150%);
+    }
+
+    .btn,
+    .cbi-button {
+        background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0));
+
+        &:active {
+            background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.12), rgba(255, 255, 255, 0));
+        }
+    }
+}

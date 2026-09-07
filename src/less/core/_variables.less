@@ -1,0 +1,102 @@
+/* luci-theme-luxe - compile time design tokens
+ *
+ * Colours live in CSS custom properties (see themes/) so they can be swapped at
+ * runtime. Everything in this file is a metric that never changes per style and
+ * is therefore resolved by LESS at build time.
+ */
+
+/* Typography ------------------------------------------------------------- */
+@font-family-base: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+@font-family-head: "Lexend", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+@font-family-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+/* Compact scale: ~15% tighter than the stock LuCI rhythm. */
+@font-size-base: 0.85rem;
+@font-size-sm: 0.78rem;
+@font-size-xs: 0.72rem;
+@font-size-lg: 0.95rem;
+@font-size-h1: 1.25rem;
+@font-size-h2: 1.1rem;
+@font-size-h3: 1rem;
+@font-size-h4: 0.9rem;
+
+@font-weight-normal: 400;
+@font-weight-medium: 500;
+@font-weight-bold: 600;
+
+@line-height-base: 1.5;
+@line-height-tight: 1.35;
+
+/* Spacing ---------------------------------------------------------------- */
+@space-0: 0;
+@space-1: 2px;
+@space-2: 4px;
+@space-3: 6px;
+@space-4: 8px;
+@space-5: 12px;
+@space-6: 16px;
+@space-7: 20px;
+@space-8: 24px;
+
+/* Radii ------------------------------------------------------------------ */
+@radius-xs: 4px;
+@radius-sm: 6px;
+@radius: 8px;
+@radius-lg: 12px;
+@radius-xl: 16px;
+@radius-pill: 999px;
+
+/* Controls --------------------------------------------------------------- */
+@control-height: 28px;
+@control-height-sm: 24px;
+@control-padding-y: 0.3rem;
+@control-padding-x: 0.9rem;
+@control-padding-x-sm: 0.6rem;
+
+@input-height: 28px;
+@input-padding-y: 0.28rem;
+@input-padding-x: 0.5rem;
+
+@table-cell-padding-y: 0.4rem;
+@table-cell-padding-x: 0.55rem;
+
+/* Structure -------------------------------------------------------------- */
+@header-height: 44px;
+@header-height-mobile: 40px;
+@sidebar-width: 200px;
+@sidebar-width-wide: 216px;
+@topnav-height: 36px;
+@navbar-height: 52px;
+@container-max: 1600px;
+@container-pad: @space-5;
+@container-pad-mobile: @space-4;
+
+/* Motion ----------------------------------------------------------------- */
+@ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+@ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+@ease-spring: cubic-bezier(0.34, 1.4, 0.64, 1);
+
+@dur-fast: 0.15s;
+@dur-base: 0.22s;
+@dur-slow: 0.34s;
+@dur-panel: 0.4s;
+
+/* Elevation -------------------------------------------------------------- */
+@z-main: 1;
+@z-sidebar: 60;
+@z-mask: 55;
+@z-header: 100;
+@z-topnav: 95;
+@z-navbar: 90;
+@z-dropdown: 120;
+@z-modal: 900;
+@z-tooltip: 1000;
+
+/* Breakpoints ------------------------------------------------------------ */
+@bp-xl: 1280px;
+@bp-lg: 1152px;
+@bp-md: 992px;
+@bp-sm: 768px;
+@bp-xs: 470px;
+@bp-xxs: 400px;
+@bp-tiny: 370px;
